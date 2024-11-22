@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import javax.annotation.PostConstruct;
 
 @SpringBootApplication
-public class SkillLinkApplication {
+public class SalaryDetailsApplication {
 
     @Value("${DB_HOST}")
     private String dbHost;
@@ -19,7 +19,7 @@ public class SkillLinkApplication {
     private String dbName;
 
     public static void main(String[] args) {
-        SpringApplication.run(SkillLinkApplication.class, args);
+        SpringApplication.run(SalaryDetailsApplication.class, args);
     }
 
     @PostConstruct

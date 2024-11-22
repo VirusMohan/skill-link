@@ -1,9 +1,8 @@
-package com.app.java.skill_link.src.Controller;
+package com.app.java.skill_link.src.controller;
 
 import com.app.java.skill_link.src.entity.Creds;
 import com.app.java.skill_link.src.jwt.JwtUtils;
 import com.app.java.skill_link.src.service.CredsService;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,18 +27,21 @@ public class CredsController {
         this.jwtUtils = jwtUtils;
     }
 
+    //testing purpose
     @PostMapping(value = "/register-user")
     public ResponseEntity<String> registerUser(@RequestBody Creds creds){
         return new ResponseEntity<>(credsService.updateCredentials(creds.getUsername(),creds.getPassword()),
                 HttpStatus.OK);
     }
 
+    //testing purpose
     @PostMapping(value = "/update-user")
     public ResponseEntity<String> updateUser(@RequestBody Creds creds){
         return new ResponseEntity<>(credsService.updateCredentials(creds.getUsername(),creds.getPassword()),
             HttpStatus.OK);
     }
 
+    //testing purpose
     @GetMapping(value = "/validate-user")
     public ResponseEntity<String> validateUser(@RequestBody Creds creds){
         return new ResponseEntity<>(credsService.validateUser(creds.getUsername(),creds.getPassword())?

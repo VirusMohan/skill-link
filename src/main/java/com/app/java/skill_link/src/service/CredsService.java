@@ -57,9 +57,9 @@ public class CredsService implements UserDetailsService {
         }
 
         return User.builder()
-                .username(user.getUsername()) // Set the username from the database
-                .password(user.getPassword()) // Set the encoded password from the database
-                .roles("USER","ADMIN","ANY") // You can also fetch roles from the database if needed
+                .username(user.getUsername())
+                .password(user.getPassword())
+                .roles("ADMIN")
                 .build();
     }
 }
